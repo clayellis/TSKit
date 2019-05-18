@@ -321,6 +321,15 @@
     }
 }
 
+- (void) setWhisperListToClientsWithIDs:(const uint16_t *)clientsIDs;
+{
+    unsigned int error;
+    if ((error = ts3client_requestClientSetWhisperList(self.serverConnectionHandlerID, _ownClientID, NULL, clientsIDs, NULL)) != ERROR_ok) {
+        NSLog(@"Error in ts3client_requestClientSetWhisperList: %@", [NSError ts_errorMessageFromCode:error]);
+    }
+}
+
+
 
 #pragma mark - TSLibrary
 

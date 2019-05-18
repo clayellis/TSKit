@@ -103,6 +103,7 @@ typedef void (^TSClientAuthPrompt)(TSClientAuthCallback authCallback);
 
 - (NSArray<TSUser *> * _Nullable)listUsersInChannel:(TSChannel *)channel error:(__autoreleasing NSError**) error;
 
+- (void) setWhisperListToClientsWithIDs:(const uint16_t *)clientsIDs;
 
 @end
 
